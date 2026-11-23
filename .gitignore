@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.*
+!.env.example
+.aws/
+.vercel/
+.vercel
+.env*
+*:Zone.Identifier

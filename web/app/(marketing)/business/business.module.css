@@ -1,0 +1,12 @@
+.hero { position: relative; min-height: 88svh; display: flex; align-items: flex-end; isolation: isolate; overflow: hidden; padding-block: 140px var(--s-9); }
+.heroGrid { row-gap: var(--s-7); position: relative; z-index: 1; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter); }
+.fact { display: flex; flex-direction: column; gap: var(--s-3); padding-top: var(--s-4); border-top: 1px solid var(--line); }
+@media (max-width: 899px) { .facts { grid-template-columns: 1fr 1fr; row-gap: var(--s-6); } }
+.templates { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gutter); }
+@media (max-width: 1099px) { .templates { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .templates { grid-template-columns: 1fr; } .template { min-height: 0; } .template h3 { margin-top: var(--s-2); } }
+.template { display: flex; flex-direction: column; gap: var(--s-3); min-height: 200px; height: 100%; }
+.template h3 { margin-top: auto; }
+.closing { position: relative; isolation: isolate; overflow: hidden; padding-block: var(--section); }
+.closingCard { padding: var(--s-7); display: flex; flex-direction: column; gap: var(--s-4); align-items: flex-start; }

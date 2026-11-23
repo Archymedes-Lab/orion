@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "ORION",
+    "slug": "orion-decisions",
+    "version": "0.2.0",
+    "scheme": "orion",
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "name": "ORION",
+      "shortName": "ORION",
+      "description": "Make better decisions. Live a better life.",
+      "themeColor": "#0B1015",
+      "backgroundColor": "#0B1015",
+      "lang": "en"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "description": "Make better decisions. Live a better life.",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B1015"
+  }
+}

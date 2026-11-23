@@ -1,0 +1,164 @@
+/*
+ * ORION design tokens — "Swiss Sky".
+ *
+ * Two inheritances: the Archymedes posters (dawn sky, frosted glass, hairline wordmark, one electric blue)
+ * and the International Typographic Style (a strict grid, flush-left grotesk, numbered sections, hairline rules,
+ * generous white space). Every value a screen uses lives here; components never invent a colour or a size.
+ */
+
+:root {
+  /* ── Colour: brand ─────────────────────────────────────────── */
+  --blue: #1c66fe;            /* the one signal colour: the next step */
+  --blue-hover: #3f7fff;
+  --blue-bright: #7faaff;     /* blue that stays legible as text on night */
+  --blue-ink: #0b3fb3;        /* blue as text on paper */
+  --blue-soft: rgb(28 102 254 / 0.16);
+  --blue-line: rgb(127 170 255 / 0.55);
+  --dawn: #f0a868;            /* the horizon glow; decoration and the "alternative" series only */
+  --dawn-deep: #c47a34;
+
+  /* ── Colour: night (default) ───────────────────────────────── */
+  --bg: #05080f;
+  --bg-raised: #0a0f1a;
+  --surface: rgb(255 255 255 / 0.04);
+  --surface-hover: rgb(255 255 255 / 0.07);
+  --glass: rgb(14 20 32 / 0.55);
+  --glass-strong: rgb(10 15 25 / 0.78);
+  --frost: rgb(255 255 255 / 0.12);
+  --frost-hover: rgb(255 255 255 / 0.2);
+  --ink: #ffffff;
+  --text: rgb(255 255 255 / 0.86);
+  --muted: rgb(255 255 255 / 0.62);
+  --faint: rgb(255 255 255 / 0.42);
+  --hair: rgb(255 255 255 / 0.1);
+  --line: rgb(255 255 255 / 0.16);
+  --line-strong: rgb(255 255 255 / 0.3);
+  --grid-line: rgb(255 255 255 / 0.045);
+
+  --success: #6fe3b4;
+  --success-soft: rgb(111 227 180 / 0.14);
+  --warning: #ffd591;
+  --warning-soft: rgb(255 213 145 / 0.14);
+  --danger: #ff9f96;
+  --danger-soft: rgb(255 159 150 / 0.14);
+
+  /* Charts: validated pair (see src/theme/tokens.ts) — blue is the pictured option, amber the alternative. */
+  --series-a: #4a84fb;
+  --series-b: #c47a34;
+
+  /* ── Type ──────────────────────────────────────────────────── */
+  --font-display: var(--font-outfit), "Outfit", var(--font-noto-kr), ui-sans-serif, system-ui, sans-serif;
+  --font-text: var(--font-inter-tight), "Inter Tight", var(--font-noto-kr), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-noto-kr), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Fluid scale on a 1.25 ratio, anchored at 16px. Display sizes grow with the viewport, text does not. */
+  --t-mega: clamp(4.5rem, 2rem + 11vw, 12rem);   /* the wordmark and one-word heroes */
+  --t-d1: clamp(3rem, 1.6rem + 5.2vw, 6.5rem);
+  --t-d2: clamp(2.5rem, 1.6rem + 3.2vw, 4.5rem);
+  --t-h1: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+  --t-h2: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
+  --t-h3: 1.375rem;
+  --t-lead: 1.25rem;
+  --t-body: 1rem;
+  --t-small: 0.875rem;
+  --t-micro: 0.75rem;
+  --t-label: 0.6875rem;
+
+  --lh-tight: 0.95;
+  --lh-snug: 1.15;
+  --lh-text: 1.55;
+
+  --track-display: -0.035em;
+  --track-heading: -0.02em;
+  --track-label: 0.22em;       /* the posters' wide-tracked capitals */
+
+  /* ── Space: 4px base, 8pt rhythm ───────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 144px;
+  --section: clamp(96px, 6vw + 64px, 176px);
+
+  /* ── Grid ──────────────────────────────────────────────────── */
+  --cols: 12;
+  --gutter: clamp(16px, 1.6vw, 24px);
+  --margin: clamp(20px, 4.5vw, 72px);
+  --max: 1440px;
+  --measure: 62ch;
+
+  /* ── Shape ─────────────────────────────────────────────────── */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* ── Depth ─────────────────────────────────────────────────── */
+  --blur: 22px;
+  --edge: inset 0 1px 0 rgb(255 255 255 / 0.08);
+  --shadow-1: var(--edge), 0 1px 2px rgb(0 0 0 / 0.2), 0 8px 24px rgb(2 6 16 / 0.24);
+  --shadow-2: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 2px 6px rgb(0 0 0 / 0.22), 0 24px 60px rgb(2 6 16 / 0.42);
+  --glow: 0 0 0 1px rgb(127 170 255 / 0.35), 0 8px 30px rgb(28 102 254 / 0.45);
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--blue-bright);
+
+  /* ── Motion ────────────────────────────────────────────────── */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);       /* expo-out: everything settles, nothing bounces */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --d-fast: 160ms;
+  --d-base: 280ms;
+  --d-slow: 560ms;
+  --d-scene: 1100ms;
+  --stagger: 70ms;
+
+  /* ── Layers ────────────────────────────────────────────────── */
+  --z-sky: -1;
+  --z-raised: 2;
+  --z-nav: 40;
+  --z-overlay: 80;
+  --z-toast: 90;
+
+  color-scheme: dark;
+}
+
+/* Paper: the Swiss light theme, for long-form sections, the business pages and anyone who prefers light. */
+.paper,
+:root[data-theme="paper"] {
+  --bg: #f3f4f1;
+  --bg-raised: #ffffff;
+  --surface: rgb(10 15 26 / 0.035);
+  --surface-hover: rgb(10 15 26 / 0.06);
+  --glass: rgb(255 255 255 / 0.62);
+  --glass-strong: rgb(255 255 255 / 0.86);
+  --frost: rgb(10 15 26 / 0.06);
+  --frost-hover: rgb(10 15 26 / 0.1);
+  --ink: #0a0f1a;
+  --text: rgb(10 15 26 / 0.84);
+  --muted: rgb(10 15 26 / 0.6);
+  --faint: rgb(10 15 26 / 0.42);
+  --hair: rgb(10 15 26 / 0.08);
+  --line: rgb(10 15 26 / 0.14);
+  --line-strong: rgb(10 15 26 / 0.3);
+  --grid-line: rgb(10 15 26 / 0.05);
+  --blue-bright: var(--blue-ink);
+  --blue-soft: rgb(28 102 254 / 0.1);
+  --success: #0f8a5f;
+  --success-soft: rgb(15 138 95 / 0.1);
+  --warning: #9a5b00;
+  --warning-soft: rgb(154 91 0 / 0.1);
+  --danger: #b4231a;
+  --danger-soft: rgb(180 35 26 / 0.08);
+  --edge: inset 0 1px 0 rgb(255 255 255 / 0.9);
+  --shadow-1: 0 1px 2px rgb(10 15 26 / 0.06), 0 8px 24px rgb(10 15 26 / 0.06);
+  --shadow-2: 0 2px 6px rgb(10 15 26 / 0.08), 0 24px 60px rgb(10 15 26 / 0.12);
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--blue);
+  color-scheme: light;
+  background: var(--bg);
+  color: var(--text);
+}
